@@ -18,6 +18,8 @@ The same game code lives in two repositories:
 | PC port (`perfect_dark`, this document's home) | PC executables (CMake) | Virtual Game Boy Camera fed by the PC's webcam, virtual Controller Pak, hair mask export |
 | N64 decompilation (`perfect_dark_n64`) | N64 ROMs (`make`) | Runs on real hardware and accurate emulators |
 
+The test plan is [`docs/perfecthead-testplan.md`](perfecthead-testplan.md).
+
 ## Building and setting up
 
 ### N64 ROM
@@ -513,6 +515,15 @@ The textures come from your ROM, so keep the exported `.bin` files to
 yourself; only the masks go in the repository.
 
 ## Testing
+
+- **Test plan:** [`docs/perfecthead-testplan.md`](perfecthead-testplan.md) lists
+  every case for the ROM and the port, who can run it and how.
+- **Build gates:** `tools/buildgate.sh` (port: PerfectHead off and on, each
+  architecture) and `tools/buildgate/buildgate.sh` in the decomp (the matching
+  build equals your retail ROM; the PerfectHead ROM builds and boots).
+- **Emulator:** `tools/emutest` in the decomp drives the ROM in Mupen64Plus in
+  Docker, with an emulated Transfer Pak and Game Boy Camera, Controller Paks
+  and up to four players.
 
 Tested so far: the whole flow in Mupen64Plus (N64 ROM, ntsc-final, one to four
 players) and on the PC port on Windows (x86_64, virtual camera with the test
