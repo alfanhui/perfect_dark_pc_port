@@ -297,6 +297,8 @@ cases tagged `[region]`. JPN has no Shigeru Miyamoto head (15 base heads, not
 | PERF-02 | R | Human (HW) | 4-player Combat Simulator, 4 PerfectHeads on players + Simulants, a large arena | Framerate within ~10% of the same match with normal heads; no "out of memory" crash |
 | PERF-03 | R | Human (HW) | Solo mission with 4 mission heads on the largest stage (e.g. Area 51) | Stage loads; no texture dropouts |
 | PERF-04 | P | Human | Same as PERF-02 on a low-end PC | No frame time regression you can feel |
+| PERF-05 | R | Human (HW) | Take A Picture Now and watch the live picture for 30 seconds, moving in front of the camera | The menus don't stutter each time the picture updates; the picture keeps up with movement at a few updates a second (the Transfer Pak's limit) |
+| PERF-06 | R | Agent | Load From Camera with `mkalbum.py`'s album, choose a picture, then Position Picture | The whole picture: its number, frame, gradient strip and `s<slot>` label (the shortened album download leaves nothing out) |
 
 ## 14. Real hardware sign-off
 
@@ -305,7 +307,7 @@ Pak and camera, and a real Controller Pak:
 
 `CAM-02`, `CAM-06`, `CAM-07`, `CAM-09`, `PIC-02`–`PIC-09`, `PIC-12`, `PIC-13`, `ED-01`,
 `ED-11`–`ED-18`, `SAVE-01`–`SAVE-09`, `LOAD-01`, `LOAD-04`, `MP-04`, `MP-05`,
-`MP-08`, `SOLO-01`, `PERF-02`, `PERF-03`.
+`MP-08`, `SOLO-01`, `PERF-02`, `PERF-03`, `PERF-05`.
 
 ## Automation: what's possible
 
